@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :welcome_send
+
   validates :email,
     presence: true,
     uniqueness: true,
@@ -10,4 +12,10 @@ class User < ApplicationRecord
 
   has_many :attendances
   has_many :events, through: :attendances
+
+  private
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 end
