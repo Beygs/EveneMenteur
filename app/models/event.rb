@@ -19,6 +19,9 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :users, through: :attendances
   
+  def end_date
+    start_date + duration.minutes
+  end
 
   private
 
