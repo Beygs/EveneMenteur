@@ -1,6 +1,4 @@
 class UserMailer < ApplicationMailer
-  default from: 'no-reply@evenementeur.fr'
-  
   def welcome_email(user)
     @user = user
     @url = 'https://evenementeur.com/login'
