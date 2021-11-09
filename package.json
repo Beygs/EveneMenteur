@@ -1,5 +1,5 @@
 {
   "name": "evenementeur",
   "private": true,
-  "dependencies": {}
+  "packageManager": "yarn@3.1.0"
 }
