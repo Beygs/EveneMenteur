@@ -84,7 +84,8 @@ nav {
 
 .event-display,
 .show-user,
-.edit-user {
+.edit-user,
+.show-event {
   display: block;
   position: relative;
   top: 100%;
@@ -107,6 +108,10 @@ nav {
 .show-user {
   background: $maximum-green;
   height: auto;
+}
+
+.show-event {
+  background: $dark-purple;
 }
 
 .edit-user {

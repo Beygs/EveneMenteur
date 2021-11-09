@@ -1,4 +1,4 @@
-<div class="show-user d-flex justify-content-center align-items-center">
+<div class="show-event d-flex justify-content-center align-items-center">
   <div class="card">
     <div class="card-header">
       Profil
@@ -13,6 +13,8 @@
       <p class="card-text m-4"><span class="text-muted">Date de fin : </span><%= @event.end_date.strftime("le %d/%m/%Y à %k:%M") %></p>
       <p class="card-text m-4"><span class="text-muted">Lieu : </span><%= @event.location %></p>
       <p class="card-text m-4"><span class="text-muted">Durée : </span><%= @event.duration %> minutes</p>
+      <p class="card-text m-4 mb-0 text-muted">Description :</p>
+      <p class="card-text m-4 mt-2"><%= @event.description %></p>
     </div>
   </div>
 </div>
