@@ -1,5 +1,5 @@
 class Attendance < ApplicationRecord
-  after_create :send_attendance
+  # after_create :send_attendance
 
   belongs_to :user
   belongs_to :event
