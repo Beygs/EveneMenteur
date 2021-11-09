@@ -22,7 +22,8 @@ Attendance.destroy_all
   User.create(
     first_name: first_name,
     last_name: last_name,
-    email: email
+    email: email,
+    password: Faker::Internet.password
   )
 end
 
