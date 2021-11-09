@@ -12,13 +12,17 @@
  *
  */
 
-@import 'bootstrap';
-
 $dark-purple: #2d112b;
 $maximum-green: #4d8b31;
 $mikado-yellow: #ffc800;
 $princeton-orange: #ff8427;
 $flame: #d95d39;
+
+$colors: $dark-purple, $maximum-green, $mikado-yellow, $princeton-orange;
+
+// @import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 
 nav {
   z-index: 100;
@@ -78,7 +82,9 @@ nav {
   }
 }
 
-.event-display{
+.event-display,
+.show-user,
+.edit-user {
   display: block;
   position: relative;
   top: 100%;
@@ -87,9 +93,59 @@ nav {
   height: 100vh;
   z-index: 2;
 
+  .card-title {
+    font-size: 3em;
+  }
+
   .card {
     min-height: 50%;
     width: 70%;
     margin: 5%;
+  }
+}
+
+.show-user {
+  background: $maximum-green;
+  height: auto;
+}
+
+.edit-user {
+  background: $flame;
+}
+
+a {
+  text-decoration: none;
+}
+
+.datetime-form,
+.select-form {
+  margin: 1rem 0;
+  label {
+    opacity: 0.65;
+    margin-bottom: 1rem;
+  }
+  select {
+    padding: 0.625rem 0.75rem;
+    line-height: 1.25;
+    color: #212529;
+    border: 1px solid #ced4d2;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.select-form {
+  select {
+    color: #6F7174;
+  }
+
+  select option {
+    color: #212529;
+  }
+
+  select option:first-child {
+    color: #6F7174;
   }
 }

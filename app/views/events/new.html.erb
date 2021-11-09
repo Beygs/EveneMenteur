@@ -1,0 +1,39 @@
+<div class="edit-user d-flex justify-content-center align-items-center">
+  <div class="card">
+    <div class="card-header">
+      Créer un événement
+    </div>
+    <div class="card-body">
+      <%= form_for(:event, url: events_path, html: { method: :post }) do |f| %>
+        <div class="form-floating">
+          <%= f.text_field :title, class: 'form-control m-2 ms-0' %>
+          <%= f.label :title, 'Titre' %>
+        </div>
+        <div class="form-floating">
+          <%= f.text_area :description, class: 'form-control m-2 ms-0' %>
+          <%= f.label :description, 'Description' %>
+        </div>
+        <div class="datetime-form">
+          <%= f.label :start_date, "Début de l'événement" %><br/>
+          <%= f.datetime_select :start_date, { ampm: false, order: [:day, :month, :year, :hour, :minute] } %>
+        </div>
+        <div class="select-form">
+          <% durations_array = [["Durée de l'événement", '']] %>
+          <% 24.times do |i| %>
+          <% durations_array << (i + 1) * 5 %>
+          <% end %>
+          <%= f.select :duration, options_for_select(durations_array), class: 'form-control' %> minutes.
+        </div>
+        <div class="form-floating">
+          <%= f.text_field :location, class: 'form-control m-2 ms-0' %>
+          <%= f.label :location, "Localisation" %>
+        </div>
+        <div class="form-floating">
+          <%= f.text_field :price, class: 'form-control m-2 ms-0' %>
+          <%= f.label :price, "Prix de l'événement" %>
+        </div>
+        <%= f.submit "Confirmer les changements", class: 'btn btn-primary m-3 ms-0' %>
+      <% end %>
+    </div>
+  </div>
+</div>

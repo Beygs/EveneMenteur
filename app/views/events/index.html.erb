@@ -15,10 +15,11 @@
         </div>
         <div class="card-footer">
           <p class='text-muted'>
-            <%= event.start_date.strftime("A lieu le %d/%m/%Y à %k:%M") %>
+            <%= event.start_date.strftime("A lieu le %d/%m/%Y à ") %>
+            <%= event.location %>
           </p>
           <p class='text-muted'>
-            <%= "Durée : #{event.duration} minutes" %>
+            <%= "Heure : #{event.start_date.strftime("%k:%M")} - Durée : #{event.duration} minutes" %>
           </p>
         </div>
       </div>
